@@ -69,4 +69,21 @@ class Car
     {
         return $this->energyLevel;
     }
+
+    public function setCurrentSpeed(int $currentSpeed): void
+    {
+        if ($currentSpeed >= 0) {
+            $this->currentSpeed = $currentSpeed;
+        }
+    }
+
+    public function setNbWheels(int $nbWheels): void
+    {
+        $this->nbWheels = $nbWheels;
+    }
+
+    public function setEnergyLevel(int $energyLevel): void
+    {
+        $this->energyLevel = $energyLevel;
+    }
 }

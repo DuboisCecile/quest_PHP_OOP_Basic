@@ -45,6 +45,16 @@ class Bicycle
         $this->color = $color;
     }
 
+    public function getNbSeats(): string
+    {
+        return $this->nbSeats;
+    }
+
+    public function getNbWheels(): string
+    {
+        return $this->nbWheels;
+    }
+
     public function getCurrentSpeed(): int
     {
         return $this->currentSpeed;
