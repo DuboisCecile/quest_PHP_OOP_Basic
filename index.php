@@ -1,7 +1,16 @@
 <?php
 
-require_once 'Speedometer .php';
+require_once 'Person.php';
 
-echo (Speedometer::kmToMiles(1));
+$person = new Person;
+$person->lastname = "Doe";
+$person->firstname = "John";
+$person->birthYear = 1965;
+$person->address = "502 Main Street, New York";
+
+echo ($person->showInfo());
 echo "<br/>";
-echo (Speedometer::milesToKm(1));
+echo ($person->age());
+echo ($person->changeAdresse("Somewhere else"));
+echo "<br/>";
+echo ($person->showInfo());
