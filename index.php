@@ -13,24 +13,14 @@ $car = new Car('green', 4, 'electric');
 $truck = new Truck('blue', 2, 'fuel', 30000);
 $skate = new Skateboard('purple', 1);
 
-$motorWay = new MotorWay(4, 130);
-$motorWay->addVehicle($bicycle);
-$motorWay->addVehicle($car);
-$motorWay->addVehicle($truck);
-$motorWay->addVehicle($skate);
-var_dump($motorWay);
+try {
+    var_dump($car);
+    $car->start();
+} catch (Exception $e) {
+    var_dump($e);
+    $car->setParkBrake();
+} finally {
+    echo "Ma voiture roule comme un donut";
+}
 
-
-$pedestrianWay = new PedestrianWay(4, 130);
-$pedestrianWay->addVehicle($bicycle);
-$pedestrianWay->addVehicle($car);
-$pedestrianWay->addVehicle($truck);
-$pedestrianWay->addVehicle($skate);
-var_dump($pedestrianWay);
-
-$residentialWay = new ResidentialWay(4, 130);
-$residentialWay->addVehicle($bicycle);
-$residentialWay->addVehicle($car);
-$residentialWay->addVehicle($truck);
-$residentialWay->addVehicle($skate);
-var_dump($residentialWay);
+var_dump($car);
