@@ -13,14 +13,13 @@ $car = new Car('green', 4, 'electric');
 $truck = new Truck('blue', 2, 'fuel', 30000);
 $skate = new Skateboard('purple', 1);
 
-try {
-    var_dump($car);
-    $car->start();
-} catch (Exception $e) {
-    var_dump($e);
-    $car->setParkBrake();
-} finally {
-    echo "Ma voiture roule comme un donut";
-}
-
 var_dump($car);
+echo ($car->switchOn());
+var_dump($car);
+
+var_dump($bicycle);
+echo ($bicycle->switchOn());
+var_dump($bicycle);
+$bicycle->setCurrentSpeed(15);
+echo ($bicycle->switchOn());
+var_dump($bicycle);

@@ -1,8 +1,9 @@
 <?php
 
 require_once 'Vehicle.php';
+require_once 'LightableInterface.php';
 
-class Truck extends Vehicle
+class Truck extends Vehicle implements LightableInterface
 {
     public const ALLOWED_ENERGIES = [
         'fuel',
@@ -64,5 +65,17 @@ class Truck extends Vehicle
     public function changeWheel(): string
     {
         return "RTFM !!!";
+    }
+
+    public function switchOn(): bool
+    {
+        $this->switched = true;
+        return $this->switched;
+    }
+
+    public function switchOff(): bool
+    {
+        $this->switched = false;
+        return $this->switched;
     }
 }
