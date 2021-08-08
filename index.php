@@ -3,47 +3,34 @@
 require_once 'Car.php';
 require_once 'Bicycle.php';
 require_once 'Truck.php';
+require_once 'MotorWay.php';
+require_once 'Skateboard.php';
+require_once 'PedestrianWay.php';
+require_once 'ResidentialWay.php';
 
-// var_dump(Car::ALLOWED_ENERGIES);
-
-// $bicycle = new Bicycle('blue', 1);
-// echo $bicycle->forward();
-// var_dump($bicycle);
-
-// $car = new Car('green', 4, 'electric');
-// echo $car->forward();
-// var_dump($car);
-
+$bicycle = new Bicycle('blue', 1);
+$car = new Car('green', 4, 'electric');
 $truck = new Truck('blue', 2, 'fuel', 30000);
-echo $truck->forward();
-echo "<br/>";
-echo $truck->brake();
-echo "<br/>";
-var_dump($truck);
-echo "<br/>";
-echo $truck->checkIfFull();
-$truck->setLoadingLevel(20000);
-echo "<br/>";
-echo $truck->checkIfFull();
-$truck->setLoadingLevel(30000);
-echo "<br/>";
-echo $truck->checkIfFull();
+$skate = new Skateboard('purple', 1);
 
-/* 
-Go !
-Brake !!! Brake !!! Brake !!! Brake !!! Brake !!! Brake !!! Brake !!! Brake !!! Brake !!! Brake !!! Brake !!! Brake !!! Brake !!! Brake !!! Brake !!! I'm stopped !
-C:\xampp\htdocs\quetes_php_poo\index.php:22:
-object(Truck)[1]
-  private string 'energy' => string 'fuel' (length=4)
-  private int 'energyLevel' => *uninitialized*
-  private int 'loadingLevel' => int 0
-  protected string 'color' => string 'blue' (length=4)
-  protected int 'currentSpeed' => int 0
-  protected int 'nbSeats' => int 2
-  protected int 'nbWheels' => *uninitialized*
-  public 'loadingCapacity' => int 30000
+$motorWay = new MotorWay(4, 130);
+$motorWay->addVehicle($bicycle);
+$motorWay->addVehicle($car);
+$motorWay->addVehicle($truck);
+$motorWay->addVehicle($skate);
+var_dump($motorWay);
 
-in filling
-in filling
-full
-*/
+
+$pedestrianWay = new PedestrianWay(4, 130);
+$pedestrianWay->addVehicle($bicycle);
+$pedestrianWay->addVehicle($car);
+$pedestrianWay->addVehicle($truck);
+$pedestrianWay->addVehicle($skate);
+var_dump($pedestrianWay);
+
+$residentialWay = new ResidentialWay(4, 130);
+$residentialWay->addVehicle($bicycle);
+$residentialWay->addVehicle($car);
+$residentialWay->addVehicle($truck);
+$residentialWay->addVehicle($skate);
+var_dump($residentialWay);

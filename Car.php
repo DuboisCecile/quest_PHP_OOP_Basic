@@ -41,4 +41,9 @@ class Car extends Vehicle
     {
         $this->energyLevel = $energyLevel;
     }
+
+    public function changeWheel(): string
+    {
+        return "You know that you have, somewhere, a spare wheel, isn't it ? Figure out what you can do with it !!!";
+    }
 }

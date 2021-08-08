@@ -60,4 +60,9 @@ class Truck extends Vehicle
         else $this->loadingStatus = "full";
         return $this->loadingStatus;
     }
+
+    public function changeWheel(): string
+    {
+        return "RTFM !!!";
+    }
 }
